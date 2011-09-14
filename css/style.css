@@ -1,0 +1,246 @@
+/* 
+    Document   : style
+    Created on : Feb 25, 2011, 4:34:07 PM
+    Author     : tobi
+    Description: Combo.fm  main stylesheet
+
+*/
+
+/* First we reset all styles */
+/* See http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  background-color: #000;
+}
+
+body,a,a:link,p,div {
+  line-height: 1;
+  color: #FFF;
+  font: 1em Arial;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.4em;
+}
+
+#leftbox a,#header a, #rightbox a, #rqlQuery a,
+#leftbox a:visited,#header a:visited, #rightbox a:visited, #rqlQuery a:visited {
+  color: #fff; font-style: normal; text-decoration: none;
+}
+
+a, a:visited {color: #fff; font-style:inherit; text-decoration: underline;}
+a:hover {text-decoration: underline;}
+
+body {color:#FFF; background-color: #000;}
+
+p {padding-top: 0.5em;padding-bottom: 0.5em;}
+
+strong {font-weight: bold;}
+hr{
+background-color: #515151; /* Farbe für Opera und Firefox */ 
+color: #515151; /* Farbe für Internet Explorer (IE) */
+border: 0; 
+height: 1px;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+div {
+  background-color: transparent;
+}
+
+small {
+  font-size:smaller;
+}
+
+#head ul li {text-align:center; vertical-align: middle; border-left: 3px solid orange;}
+#head ul li.lastitem {border-right: 3px solid orange;}
+#head ul {height:2em;padding:10px;}
+#head div.inner {padding:10px;}
+#main {height:100.01%;color:white;}
+#footer {height:80px;}
+#footer div {padding-top:20px;text-align: center;}
+
+#leftbox > div.space,#rightbox > div.space, #leftbox > div.ui-widget-content {margin-bottom: 10px;}
+#leftbox > div.ui-widget-content, #rightbox > .ui-widget > div.ui-widget-content,
+#main > div.ui-widget-content{padding:10px;}
+#leftbox button {
+  float:right;
+}
+#leftbox input {
+  width:140px;
+  
+}
+#settings {color:white;}
+/* Do not display our "template" for the rql boxes */
+#templates {display: none;}
+#topTags div {padding-top:0.3em;}
+
+.displayItem {width:100.01%; margin-bottom: 5px;}
+.displayItem div {margin-top: 0px; padding:5px;}
+.heading, .accordion-heading {padding-left: -16px;text-align:center;background-color: orange; color: #000;}
+.accordion-heading, .accordion-heading h3 {cursor: pointer;}
+.accordion-heading div {float:left;}
+.accordion-heading span {float:left;}
+/** And, or, not selector */
+#stationUrl, div.connector {text-align: center;}
+
+div.stationPicture{
+  position: relative;
+  display: block;
+  float:left;
+  width:126px;
+  max-height: 126px;
+  vertical-align: middle;
+  text-align: center;
+  overflow:hidden;
+}
+.autooverflow {
+   overflow: auto;
+}
+div.stationPicture img {
+    vertical-align: middle;
+    height: 100%;
+}
+
+
+
+/* Show tags like on last.fm.
+Graphics and parts of the styles taken from there.
+*/
+
+a.tag {
+    display: block;
+    float: left;
+    height: 19px;
+    padding: 0 2px 0 0;
+    background: url(../img/globaltag_right.png) no-repeat right top;
+    color: #fff;
+    font-size: 11px;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+a.tag:hover {
+    text-decoration: none;
+    background-position: right bottom;
+    color: #fff;
+}
+
+a.tag span {
+    display: block;
+    float: left;
+    height: 15px;
+    padding: 1px 7px 3px 19px;
+    background: url(../img/globaltag_left.png) no-repeat left top;
+    line-height: 15px;
+    /*vertical-align: top;*/
+    white-space: nowrap;
+}
+
+a.tag:hover span {
+    background-position: left bottom;
+}
+
+div.description {
+  display:inline;
+  position: relative;
+  text-align: center;
+  /*vertical-align: 50%;*/
+  left:0px;
+  height: auto;
+  overflow:auto;
+}
+
+div.imagebox {
+  height:126px;
+}
+
+div.remove * {float:right; display: block; font-weight: bold;text-decoration: none;}
+
+.spacer {height: 20px;}
+.white {background-color: white;}
+.ui-icon-black {
+  width: 16px; height: 16px; 
+  background-image: url(ui-darkness/images/ui-icons_222222_256x240.png); 
+}
+
+#stationUrl a.ui-button {
+  margin-top: 0.5em;
+}
+#queryString {
+  display:none;
+}
+
+#rqlQuery, #rightbox .content,  #showQuery {
+  display:none;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+#shareStation { text-align:left; vertical-align: middle;}
+#shareStation li {margin-right:5px; }
+
+.sortablePlaceholder {
+  border: 3px dashed #FFF;
+}
+
+.queryString {
+  width: 100%;
+}
+
+.connector {
+  display: block;
+}
+
+/* http://jqueryfordesigners.com/image-loading/ */
+.loading {
+  background: url(../img/spinner.gif) no-repeat center center;
+}
