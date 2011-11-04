@@ -1,5 +1,5 @@
 <?
 require 'apiDetails.php';
-#print $_POST['call'];
-print md5($_POST['call'].$secret);
+#Need to strip slashes which have been inserted to the API call.
+print md5(stripslashes($_POST['call']).$secret);
 ?>
