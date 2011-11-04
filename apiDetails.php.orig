@@ -1,0 +1,5 @@
+<?
+#Edit this file to contain your key and secret, and move to apiDetails.php
+$apikey="INSERT_API_KEY_HERE";
+$secret="INSERT_API_SECRET_HERE";
+?>

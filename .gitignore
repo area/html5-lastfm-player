@@ -1,6 +1,6 @@
 # Can ignore specific files
 .DS_Store
-
+apiDetails.php
 # Use wildcards as well
 *~
 *.swp
