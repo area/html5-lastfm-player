@@ -45,14 +45,14 @@ function LastFM(options){
 				dataType: 'xml',
 				error: function(data) {
 					console.log('error:');
-					console.log(data);
 					/* TODO: Error callbacks */
 				},
 				success: function(data) {
-					console.log('success:');
 					/* If we could do JSON datatype as post with jQuery, then we wouldn't need xml2json */
-					var jsonData = $.xml2json(data);
-					callbacks.success(jsonData);
+					if(typeof(callbacks.success) != 'undefined'){
+						var jsonData = $.xml2json(data);
+						callbacks.success(jsonData);
+					}	
 				}
 			});
 			return;
