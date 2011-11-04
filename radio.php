@@ -109,6 +109,12 @@ function playNext() {
   $("#jpId").jPlayer("setMedia", {mp3:track.location} );
   $("#jpId").jPlayer("play");
 console.log("playing next track " + track.location);
+console.log(track);
+lastfm.track.updateNowPlaying({
+	track: track.title, 
+	artist: track.creator, 
+	album: track.album, 
+	sk:session});
 }
 
 $(document).ready(function() {
