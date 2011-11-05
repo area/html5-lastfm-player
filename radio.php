@@ -4,6 +4,8 @@ require 'apiDetails.php';
 
 <html>
   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
     <link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui-1.8.10.custom.css"/>
 <link rel="stylesheet" type="text/css" href="css/jplayer/jplayer.blue.monday.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -108,6 +110,7 @@ function playNext() {
   var track = getNextTrack();
   $("#jpId").jPlayer("setMedia", {mp3:track.location} );
   $("#jpId").jPlayer("play");
+  window.startTime = Math.round(new Date().getTime() / 1000);
 console.log("playing next track " + track.location);
 console.log(track);
 lastfm.track.updateNowPlaying({
@@ -115,6 +118,8 @@ lastfm.track.updateNowPlaying({
 	artist: track.creator, 
 	album: track.album, 
 	sk:session});
+   window.scrobbled = false;
+   window.track = track;
 }
 
 $(document).ready(function() {
@@ -123,6 +128,23 @@ $(document).ready(function() {
     stationUrl = $("#stationUrl").val();
     loadPlayer(); 
   });
+  /* Bind the timeEvent so we can scrobble appropriately */
+  $("#jpId").bind($.jPlayer.event.timeupdate, function(event) { 
+	if ( window.scrobbled == false && event.jPlayer.status.currentPercentAbsolute > 50)
+	{
+		console.log("Scrobble");
+		window.scrobbled = true;
+		lastfm.track.scrobble({
+			timestamp: window.startTime,
+			album: window.track.album,
+			artist: window.track.creator,
+			track: window.track.title,
+			streamId: window.track.identifier,
+			chosenByUser: 0,
+			sk: session
+		});
+	} });
+  window.scrobbled = false;
 });
 </script>
   </head>
