@@ -149,7 +149,7 @@ $(document).ready(function() {
 </script>
   </head>
   <body><div>
-<input type="text" size="30" id="stationUrl" value="lastfm://artist/Meat+Loaf/similar"></input><button id="okStationUrl">OK</button></div>
+<input type="text" size="30" id="stationUrl" value="lastfm://artist/Meat+Loaf/similar"></input><button id="okStationUrl">OK</button> <a href="./logout.php">Logout</a></div>
 <div>Current station: <span id="currentStation"></span></div>
 <div id="jpId"></div>
 <div class="jp-audio">
