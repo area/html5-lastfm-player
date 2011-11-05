@@ -12,7 +12,7 @@ require 'apiDetails.php';
 <script type="text/javascript" src="js/lastfm.api.md5.js"></script>
 <script type="text/javascript" src="js/lastfm.api.js"></script>
 <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="js/jQuery.xml2json.pack.js"></script>
+<script type="text/javascript" src="js/jquery.xml2json.pack.js"></script>
 <script type="text/javascript">
 
 //   $('button,.button').button();
