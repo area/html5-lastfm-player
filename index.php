@@ -8,6 +8,6 @@ if (!isset($_SESSION['sessionKey'])){
 
 }else{
 
-	header("Location: http://127.0.0.1/html5-lastfm-player/radio.php");
+	header("Location: ".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).""/radio.php");
 }
 ?>
